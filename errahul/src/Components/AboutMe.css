@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.screen-aboutme{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid blue;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border: 3px solid orange;
+}
+
+/* .intro-content{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid blue;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+} */
