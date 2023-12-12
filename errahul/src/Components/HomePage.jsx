@@ -1,17 +1,69 @@
+import { useState } from 'react';
+import Certificate from './Certificates';
+import Contact from './Contact';
 import './HomePage.css';
+import ProfileSection from './ProfileSection';
+import SideNavbar from './SideNavbar';
+import AboutMe from './AboutMe';
+import Resume from './Resume';
+import Project from './Projects';
 
 const HomePage = () => {
-    const navIcons = [{ iclass: <i class="fa-solid fa-house"></i>, title: 'Home' }, { iclass: <i class="fa-solid fa-user"></i>, title: 'Home' }, { iclass: <i class="fa-solid fa-graduation-cap"></i>, title: 'Home' }, { iclass: <i class="fa-solid fa-briefcase"></i>, title: 'Home' }, { iclass: <i class="fa-solid fa-book"></i>, title: 'Home' }, { iclass: <i class="fa-regular fa-handshake"></i>, title: 'Home' }]
+
+    const [currentPage, setCurrentPage] = useState('home')
+
+    const handlePageChanges = (page) => {
+        setCurrentPage(page)
+    }
+
+    const getPageComponent = () => {
+        switch (currentPage) {
+            case 'aboutme':
+                return <AboutMe />;
+            case 'resume':
+                return <Resume />;
+            case 'projects':
+                return <Project />;
+            case 'certificate':
+                return <Certificate />;
+            case 'contactme':
+                return <Contact />;
+            default:
+                return (
+                    <div className='intro-content'>
+                        <h2>Hello Everyone 👋 </h2>
+                        <h4> I'm a MERN maestro, expert in HTML, CSS, and JavaScript sorcery, with a flair for ReactJS.</h4>
+                        <h4>Embark on a journey where every pixel matters, and user experience reigns supreme.</h4>
+                        <h4>Ready to infuse innovation into your project? Explore my portfolio, and let's weave the extraordinary together.</h4>
+                    </div>
+                );
+        }
+    };
+
+
     return (
         <>
             <div className="screen-home">
-                <div className="home-side-navbar">
-                    {navIcons?.length ? <div className='side-nav-parent'>{navIcons.map((item, index) => (
-                        <div key={index} className='side-nav-child'>
-                            <a>{item.iclass}</a>
-                            <a>{item.title}</a>
+                <div className="child-home">
+                    <SideNavbar onPageChange={handlePageChanges} />
+                    <ProfileSection />
+                    {getPageComponent()}
+                    {/* {pageChange?.length? <div>{pageChange.map((item, index)=>(
+                        <div key={index}>
+                            <div>{item.contactMe}</div>
                         </div>
-                    ))}</div> : <div>Loading</div>}
+                    ))}</div> : <div className='intro-content'>
+                        <h2>Hello Everyone 👋 </h2>
+                        <h4> I'm a MERN maestro, expert in HTML, CSS, and JavaScript sorcery, with a flair for ReactJS.</h4>
+                        <h4>Embark on a journey where every pixel matters, and user experience reigns supreme.</h4>
+                        <h4>Ready to infuse innovation into your project? Explore my portfolio, and let's weave the extraordinary together.</h4>
+                    </div>} */}
+                    {/* <div className='intro-content'>
+                        <h2>Hello Everyone 👋 </h2>
+                        <h4> I'm a MERN maestro, expert in HTML, CSS, and JavaScript sorcery, with a flair for ReactJS.</h4>
+                        <h4>Embark on a journey where every pixel matters, and user experience reigns supreme.</h4>
+                        <h4>Ready to infuse innovation into your project? Explore my portfolio, and let's weave the extraordinary together.</h4>
+                    </div> */}
                 </div>
             </div>
         </>
