@@ -1,4 +1,5 @@
 import './SideNavbar.css';
+import './MediaSideNavbar.css';
 
 const SideNavbar = ({ onPageChange }) => {
     const navIcons = [

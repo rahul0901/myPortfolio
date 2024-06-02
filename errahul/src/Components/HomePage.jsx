@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Certificate from './Certificates';
 import Contact from './Contact';
 import './HomePage.css';
+import './MediaHomePage.css';
 import ProfileSection from './ProfileSection';
 import SideNavbar from './SideNavbar';
 import AboutMe from './AboutMe';

@@ -1,0 +1,26 @@
+@media screen and (max-width: 999px) {
+
+    .parent {
+        width: 100%;
+    }
+
+    .contactme-bc-2 {
+        flex-direction: column-reverse;
+    }
+
+    .contactme-bc-2-left{
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .contactme-bc-2-left div{
+        width: 20%;
+    }
+
+    .contactme-bc-2-right{
+        width: 100%;
+    }
+
+}

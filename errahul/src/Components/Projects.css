@@ -4,13 +4,24 @@
     box-sizing: border-box;
 }
 
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 .screen-project {
+    animation: slideInLeft 0.5s ease;
     width: 70%;
     height: 100%;
     margin: auto;
     border: 2px solid blue;
     padding: 10px;
     text-align: center;
-    background-color: #fff;
+    background-color: #222222;
     border: 3px solid orange;
+    color: white;
 }

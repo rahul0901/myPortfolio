@@ -1,0 +1,7 @@
+@media screen and (max-width: 999px) {
+    
+    .profile-section{
+        display: none;
+    }
+
+}
